@@ -126,6 +126,12 @@ Aditionally contains the code for the Line class that was implemented to keep tr
 
 Here's a [link to my video result](https://youtu.be/hBsLxR-2YQI)
 
+<iframe width="1229" height="691" src="https://www.youtube.com/embed/hBsLxR-2YQI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=hBsLxR-2YQI
+" target="_blank"><img src="http://img.youtube.com/vi/hBsLxR-2YQI/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 The link to the challenge video is [here](https://youtu.be/hBTbK46dJD4) and the harder challenge results can be seen [here](https://www.youtube.com/watch?v=-pfjKvcz8fQ).
 
 ---
