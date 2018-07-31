@@ -22,13 +22,13 @@ The goals / steps of this project are the following:
 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
 
-###Camera Calibration
+### Camera Calibration
 
-####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image?
+#### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image?
 The code for this step is contained in the first code cell of the IPython notebook located in "./Udacity-Advanced-Lane-Lines/calibration.ipynb".
 
 
@@ -43,9 +43,9 @@ I used the output `objpoints` and `imgpoints` to compute the camera calibration 
 ![alt text][image2]
 
 
-###Pipeline (single images)
+### Pipeline (single images)
 
-####1. Has the distortion correction been correctly applied to each image?
+#### Has the distortion correction been correctly applied to each image?
 In order to show the results obtained once the calibration was obtained, I will show you the distortion correction aplied in one of the test images. However, in the IPython notebook located in "./Udacity-Advanced-Lane-Lines/calibration.ipynb" all the test images are undistorted. You can also find the undistorted images in the "./Udacity-Advanced-Lane-Lines/undistortion" folder.
 
 The function ***cv2.undistort(img, mtx, dist, None, mtx)*** takes an image, the calibration matrix, the distortion coefficients; `mtx` and `dist` are obtained from the calibration of the camera. The function returns an image without distortion. 
@@ -53,7 +53,7 @@ The function ***cv2.undistort(img, mtx, dist, None, mtx)*** takes an image, the 
 ![alt text][image3]
 
 
-####2. Has a binary image been created using color transforms, gradients or other methods?
+#### Has a binary image been created using color transforms, gradients or other methods?
 In order to filter the images and keep only the lane lines, I used the absolute value of Sobel x since this will help me to keep the vertical lines and it will dimish the horizontal lines. This is helpful since the lane lines I'm looking for are vertical. Additilonally I also implemented a color thresholding using the HLS color space and applying a threshold on the S(saturation) channel since this will work for yellow and white lines.
 
 
@@ -61,7 +61,7 @@ In order to filter the images and keep only the lane lines, I used the absolute 
 
 
 
-####3. Has a perspective transform been applied to rectify the image?
+#### Has a perspective transform been applied to rectify the image?
 
 The function `warp` can be found in the IPython notebook called `Development` on the 10th cell. It takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  
 
@@ -92,7 +92,7 @@ I verified that my perspective transform was working as expected by drawing the 
 ![alt text][image5]
 
 
-####4. Have lane line pixels been identified in the rectified image and fit with a polynomial?
+#### Have lane line pixels been identified in the rectified image and fit with a polynomial?
 
 After calculating the warped image. First I calculate the histogram across the image, this was implemented using `numpy.sum()` to sum all the pixels on the rows, the result is the following:
 
@@ -108,16 +108,16 @@ The result obtained for one of the test images is the following:
 ![alt text][image7]
 
 
-####5. Having identified the lane lines, has the radius of curvature of the road been estimated? And the position of the vehicle with respect to center in the lane?
+#### Having identified the lane lines, has the radius of curvature of the road been estimated? And the position of the vehicle with respect to center in the lane?
 
 Yes. I used the x and y coordinates obtained with the polynomial to calculate the curvature of the lane. This code can be found on the IPython notebook called `LaneDetection` using function `calculate_curvature_pixels` using the formula as described [here](https://www.intmath.com/applications-differentiation/8-radius-curvature.php).
 
 
 ---
 
-###Pipeline (video)
+### Pipeline (video)
 
-####1. Does the pipeline established with the test images work to process the video?
+#### Does the pipeline established with the test images work to process the video?
 
 The code used for the final pipeline can be found on the IPython notebook called `LaneDetection`, this notebook will contain all the function described above but without the images demostrations. 
 
@@ -129,7 +129,7 @@ The link to the challenge video is [here](https://youtu.be/hBTbK46dJD4) and the 
 
 ---
 
-##Discussion
+## Discussion
 
   
 This project was very interesting and challenging. I learnt a lot of technics used for computer vision like measuring and correcting distortion, perpective trasnformation, how to use diffent color spaces to filter images, etc. One of the most challenging parts for me was how to establish the right parameters to determine which detected line was not a good one so sometimes I added lanes that messed up the average of the lane. So definitely I should work on a better strategy or on a more sophisticated method to identified bad lines. I also could explore more on the threshold and color spaces to find a better filter. Also, in the harder challenge as understood the lines are curving in both the directions too frequently. So, the neighbouring area search strategy does not work and the searching starts from scratch. Also, a better strategy can be to check the tangents of the lane lines at similar y position and move forward if they match. At the same time it would also be good to check the uniformity of the distance between the lines in the unwarped image. These kind of strategies can improve the performance and accurany of detected lines under varios conditions.
