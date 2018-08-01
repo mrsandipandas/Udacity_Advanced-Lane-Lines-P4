@@ -126,7 +126,9 @@ Aditionally contains the code for the Line class that was implemented to keep tr
 
 Here's a [link to my video result](https://youtu.be/hBsLxR-2YQI)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=hBsLxR-2YQI "target="_blank"><img src="http://img.youtube.com/vi/hBsLxR-2YQI/0.jpg" alt="Video result of advanced lane finding" width="640" height="480" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=hBsLxR-2YQI " target="_blank">
+	<img src="http://img.youtube.com/vi/hBsLxR-2YQI/0.jpg" alt="Video result of advanced lane finding" width="640" height="480" border="10"/>
+</a>
 
 The link to the challenge video is [here](https://youtu.be/hBTbK46dJD4) and the harder challenge results can be seen [here](https://www.youtube.com/watch?v=-pfjKvcz8fQ).
 
