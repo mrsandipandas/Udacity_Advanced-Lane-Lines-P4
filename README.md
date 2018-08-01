@@ -113,6 +113,13 @@ The result obtained for one of the test images is the following:
 
 Yes. I used the x and y coordinates obtained with the polynomial to calculate the curvature of the lane. This code can be found on the IPython notebook called `LaneDetection` using function `calculate_curvature_pixels` using the formula as described [here](https://www.intmath.com/applications-differentiation/8-radius-curvature.php).
 
+Also, depending upon my prespective transform, I have chosen the following:
+
+`xm_per_pix = 3.7/900` and `ym_per_pix = 17/720` for more accuracy in the determing the position of the car. Also, instead of using the last polynomial, I averaged as follows to get much more smoother result:
+
+`lanes_middle_distance = abs(right_lane.recent_xfitted[:][-1].mean() + left_lane.recent_xfitted[:][-1].mean())/2`
+
+Also, depending on the position of the vehicle, I have added whether the car is to the left or to the right of the center in the video results to provide for undestanding of the result. 
 
 ---
 
@@ -124,13 +131,13 @@ The code used for the final pipeline can be found on the IPython notebook called
 
 Aditionally contains the code for the Line class that was implemented to keep track of the lanes in each frame as well as other helper functions. 
 
-Here's a [link to my video result](https://youtu.be/hBsLxR-2YQI)
+Here's a [link to my video result](https://youtu.be/pGj49kfwW-g)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=hBsLxR-2YQI " target="_blank">
-	<img src="http://img.youtube.com/vi/hBsLxR-2YQI/0.jpg" alt="Video result of advanced lane finding" width="640" height="480" border="10"/>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=pGj49kfwW-g " target="_blank">
+	<img src="http://img.youtube.com/vi/pGj49kfwW-g/0.jpg" alt="Video result of advanced lane finding" width="640" height="480" border="10"/>
 </a>
 
-The link to the challenge video is [here](https://youtu.be/hBTbK46dJD4) and the harder challenge results can be seen [here](https://www.youtube.com/watch?v=-pfjKvcz8fQ).
+The link to the challenge video is [here](https://youtu.be/ORrcnVYa6d8) and the harder challenge results can be seen [here](https://youtu.be/bD9xLTo91ks).
 
 ---
 
