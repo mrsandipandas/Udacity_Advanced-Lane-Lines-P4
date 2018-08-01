@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 
 Initially, I started off with the calibration and then moved on to the individual frame and finally to the pipeline for the video processing.
 
-## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
+## [Rubric Points](https://review.udacity.com/#!/rubrics/571/view)
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
