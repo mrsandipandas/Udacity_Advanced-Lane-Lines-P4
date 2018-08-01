@@ -115,11 +115,13 @@ Yes. I used the x and y coordinates obtained with the polynomial to calculate th
 
 Also, depending upon my prespective transform, I have chosen the following:
 
-`xm_per_pix = 3.7/900` and `ym_per_pix = 17/720` for more accuracy in the determing the position of the car. Also, instead of using the last polynomial, I averaged as follows to get much more smoother result:
+`xm_per_pix = 3.7/900` and `ym_per_pix = 17/720` for more accuracy in the determing the position of the car. 
+
+Furthermore, instead of using the last polynomial, I averaged as follows to get much more smoother result:
 
 `lanes_middle_distance = abs(right_lane.recent_xfitted[:][-1].mean() + left_lane.recent_xfitted[:][-1].mean())/2`
 
-Also, depending on the position of the vehicle, I have added whether the car is to the left or to the right of the center in the video results to provide for undestanding of the result. 
+And finally, depending on the position of the vehicle, I have added whether the car is to the left or to the right of the center in the video results to provide for undestanding of the result. 
 
 ---
 
